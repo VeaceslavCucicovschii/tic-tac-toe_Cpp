@@ -1,16 +1,18 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include "GameEngine.hpp"
+#include "IRenderer.hpp"
 
-class Renderer
+// ": public IRenderer" inseamna ca Renderer mosteneste clasa abstracta.
+// Functiile de mai jos sunt scrise in Renderer.cpp.
+class Renderer : public IRenderer
 {
 public:
-    static void drawBoard(const GameEngine &engine);
-    static void drawWelcome();
-    static void drawTurn(char player);
-    static void drawInvalidMove();
-    static void drawResult(char winner);
+    void drawBoard(const GameEngine &engine);
+    void drawWelcome();
+    void drawTurn(char player);
+    void drawInvalidMove();
+    void drawResult(char winner);
 };
 
 #endif
