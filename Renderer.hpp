@@ -1,16 +1,17 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include "GameEngine.hpp"
+#include "IRenderer.hpp"
 
-class Renderer
+class Renderer : public IRenderer
 {
 public:
-    static void drawBoard(const GameEngine &engine);
-    static void drawWelcome();
-    static void drawTurn(char player);
-    static void drawInvalidMove();
-    static void drawResult(char winner);
+    void drawBoard(const GameEngine &engine);
+    void drawWelcome();
+    void drawTurn(char player);
+    void drawInvalidMove();
+    void drawResult(char winner);
+    void drawMoves(const std::vector<Move> &moves);
 };
 
 #endif
