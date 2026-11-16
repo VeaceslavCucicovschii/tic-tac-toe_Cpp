@@ -3,8 +3,6 @@
 
 #include "IRenderer.hpp"
 
-// ": public IRenderer" inseamna ca Renderer mosteneste clasa abstracta.
-// Functiile de mai jos sunt scrise in Renderer.cpp.
 class Renderer : public IRenderer
 {
 public:
@@ -13,6 +11,7 @@ public:
     void drawTurn(char player);
     void drawInvalidMove();
     void drawResult(char winner);
+    void drawMoves(const std::vector<Move> &moves);
 };
 
 #endif
